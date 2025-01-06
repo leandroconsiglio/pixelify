@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'iiec.ditzdev.pixelify'
+    compileSdk 34
+    buildToolsVersion '33.0.0'
+    
+    defaultConfig {
+        applicationId "iiec.ditzdev.pixelify"
+        minSdk 23
+        targetSdk 34
+        versionCode 99
+        versionName "1.0.1-pro"
+        
+        vectorDrawables { 
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+        aidl true
+    }
+}
+
+dependencies {
+    implementation("dev.rikka.shizuku:api:12.1.0")
+    implementation("dev.rikka.shizuku:provider:12.1.0")
+    implementation("com.github.topjohnwu.libsu:core:5.0.5")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.9.0")
+}

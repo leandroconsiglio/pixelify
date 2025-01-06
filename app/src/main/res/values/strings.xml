@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pixelify</string>
+    <!-- DIALOG -->
+    <string name="title_warning_dialog">Warning!</string>
+    <string name="subtitle_warningfirst_dialog">This application can change the resolution on the device, USE WITH CAUTION AND AT YOUR OWN RISK!!!</string>
+    <string name="action_understand">Understand</string>
+    <string name="action_reject">Reject</string>
+    
+    <!-- ACTIVITY GET STARTUP -->
+    <string name="startup_page_title">Get Startup</string>
+    <string name="startup_page_subtitle">Lets get started and activate the Pixelify service by selecting the method below.</string>
+    <string name="shizuku_title">Starts with Shizuku</string>
+    <string name="shizuku_subtitle">Start with Shizuku, Click here to activate.</string>
+    <string name="adb_title">ADB Shell</string>
+    <string name="adb_subtitle">Start with ADB Shell, Click here to get the command.</string>
+    <string name="root_title">ROOT Users</string>
+    <string name="root_subtitle">For Root users, Just click here to start and grant Permission.</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_docs_shizuku">&lt;a href="https://shizuku.rikka.app/guide/setup/">Click here&lt;/a> for more documentation setup &lt;a href="https://shizuku.rikka.app/">Shizuku.&lt;/a></string>
+    <string name="no_shizuku_found">Shizuku not found, Are you installed Shizuku?</string>
+    <string name="failed_requestperm_shizuku">failed to get permission from Shizuku</string>
+    <string name="success_root_permission">Root permission granted successfully</string>
+    <string name="failed_root_permission">Failed to get root permission</string>
+</resources>
