@@ -35,7 +35,7 @@ proguard/
 captures/
 
 # IntelliJ
-.androidide
+*.androidide
 *.iml
 .idea/workspace.xml
 .idea/tasks.xml
