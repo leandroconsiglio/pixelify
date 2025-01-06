@@ -22,4 +22,7 @@
     <string name="failed_requestperm_shizuku">failed to get permission from Shizuku</string>
     <string name="success_root_permission">Root permission granted successfully</string>
     <string name="failed_root_permission">Failed to get root permission</string>
+    <string name="string_devices_notroot"> Your devices is not Rooted.</string>
+    <string name="string_adb_docs">To enable Pixelify via ADB Shell, Copy command by tapping the button below.\n&lt;a href="https://developer.android.com/tools/adb?hl=id#:~:text=Android%20Debug%20Bridge%20(%20adb%20)%20is,of%20commands%20on%20a%20device.">Learn more&lt;/a></string>
+    <string name="string_adb_btn">Copy Command</string>
 </resources>

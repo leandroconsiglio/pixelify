@@ -1,6 +1,9 @@
 package iiec.ditzdev.pixelify.activity;
 
 import android.Manifest;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -8,8 +11,11 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.snackbar.Snackbar;
 import com.topjohnwu.superuser.Shell;
 import iiec.ditzdev.pixelify.databinding.LayoutStartupPageBinding;
@@ -22,13 +28,12 @@ public class StartupPage extends AppCompatActivity {
   private static final int REQUEST_CODE_SHIZUKU = 999;
   private static final int REQUEST_CODE_WSS = 99999; // wss: write_secure_settings
   private static final String NAME_PERMISSION = "android.permission.WRITE_SECURE_SETTINGS";
-  
+
   static {
     // Initialize libsu
     Shell.enableVerboseLogging = BuildConfig.DEBUG;
-    Shell.setDefaultBuilder(Shell.Builder.create()
-        .setFlags(Shell.FLAG_MOUNT_MASTER)
-        .setTimeout(10));
+    Shell.setDefaultBuilder(
+        Shell.Builder.create().setFlags(Shell.FLAG_MOUNT_MASTER).setTimeout(10));
   }
 
   private LayoutStartupPageBinding binding;
@@ -42,59 +47,66 @@ public class StartupPage extends AppCompatActivity {
     binding.btnContinue.setEnabled(false /* Default disabled*/);
     binding.txtDocsShizuku.setMovementMethod(LinkMovementMethod.getInstance());
     binding.txtDocsShizuku.setText(Html.fromHtml(getString(R.string.action_docs_shizuku)));
-    
-    // Check if device is rooted
     checkRoot();
-    
     binding.btnPermShizuku.setOnClickListener(v -> connectToShizuku());
     binding.btnPermRoot.setOnClickListener(v -> requestRootPermission());
-    
-    if (hasPermission()) {
-      binding.btnPermShizuku.setChecked(true);
-      binding.btnContinue.setOnClickListener(
-          v -> {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-          });
-    }
+    binding.btnPermAdb.setOnClickListener(v -> showBottomAdb());
+  }
+
+  private void showBottomAdb() {
+    BottomSheetDialog btmDialog = new BottomSheetDialog(this);
+    View btmViewAdb = getLayoutInflater().inflate(R.layout.bottom_sheet_adb, null);
+    btmDialog.setContentView(btmViewAdb);
+    TextView txtAdb = btmViewAdb.findViewById(R.id.txtDocsBtmAdb);
+    txtAdb.setMovementMethod(LinkMovementMethod.getInstance());
+    txtAdb.setText(Html.fromHtml(getString(R.string.string_adb_docs)));
+    Button btnCopy = btmViewAdb.findViewById(R.id.btnCopyAdbCmd);
+    btnCopy.setOnClickListener(
+        v -> {
+          ClipboardManager manager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+          ClipData data =
+              ClipData.newPlainText(
+                  "Command Shell: ",
+                  "adb shell pm grant node.ditzdev.pixelify android.permission.WRITE_SECURE_SETTINGS");
+          manager.setPrimaryClip(data);
+          Snackbar.make(findViewById(android.R.id.content), "Copied to Clipboard", Snackbar.LENGTH_SHORT).show();
+          btmDialog.dismiss();
+        });
+    btmDialog.show();
   }
 
   private void checkRoot() {
-    // Check if device is rooted using libsu
     isRooted = Shell.isAppGrantedRoot() == true || Shell.rootAccess();
     binding.btnPermRoot.setEnabled(isRooted);
-    
+
     if (isRooted) {
-      // If rooted, show root permission button
       binding.btnPermRoot.setEnabled(true);
     } else {
-      // If not rooted, hide root permission button
       binding.btnPermRoot.setEnabled(false);
-      binding.btnPermRoot.setSubtitle("Your devices is not Rooted.");     
+      binding.btnPermRoot.setSubtitle(getString(R.string.string_devices_notroot));
     }
   }
 
   private void requestRootPermission() {
     try {
-      // Request root permission using libsu
       Shell.su("pm grant " + getPackageName() + " " + NAME_PERMISSION).exec();
-      
+
       if (hasPermission()) {
         binding.btnContinue.setEnabled(true);
         binding.btnPermRoot.setChecked(true);
         Snackbar.make(
-            findViewById(android.R.id.content),
-            getString(R.string.success_root_permission),
-            Snackbar.LENGTH_SHORT)
-        .show();
+                findViewById(android.R.id.content),
+                getString(R.string.success_root_permission),
+                Snackbar.LENGTH_SHORT)
+            .show();
       }
     } catch (Exception e) {
       Log.e("RootPermission", "Failed to get root permission", e);
       Snackbar.make(
-          findViewById(android.R.id.content),
-          getString(R.string.failed_root_permission),
-          Snackbar.LENGTH_SHORT)
-      .show();
+              findViewById(android.R.id.content),
+              getString(R.string.failed_root_permission),
+              Snackbar.LENGTH_SHORT)
+          .show();
     }
   }
 
@@ -170,6 +182,11 @@ public class StartupPage extends AppCompatActivity {
     super.onResume();
     if (hasPermission()) {
       binding.btnContinue.setEnabled(true);
+      binding.btnContinue.setOnClickListener(
+          v -> {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();         
+          });
       binding.btnPermShizuku.setChecked(true);
       if (isRooted) {
         binding.btnPermRoot.setChecked(true);
