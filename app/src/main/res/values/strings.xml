@@ -6,7 +6,7 @@
     <string name="subtitle_warningfirst_dialog">This application can change the resolution on the device, USE WITH CAUTION AND AT YOUR OWN RISK!!!</string>
     <string name="action_understand">Understand</string>
     <string name="action_reject">Reject</string>
-    
+
     <!-- ACTIVITY GET STARTUP -->
     <string name="startup_page_title">Get Startup</string>
     <string name="startup_page_subtitle">Lets get started and activate the Pixelify service by selecting the method below.</string>
@@ -25,4 +25,49 @@
     <string name="string_devices_notroot"> Your devices is not Rooted.</string>
     <string name="string_adb_docs">To enable Pixelify via ADB Shell, Copy command by tapping the button below.\n&lt;a href="https://developer.android.com/tools/adb?hl=id#:~:text=Android%20Debug%20Bridge%20(%20adb%20)%20is,of%20commands%20on%20a%20device.">Learn more&lt;/a></string>
     <string name="string_adb_btn">Copy Command</string>
+
+    <!-- ACTIVITY MAIN -->
+    <string name="greeting_main">Welcome to Pixelify!</string>
+    <string name="docs_greeting_main">Lets change your system resolution according to your wishes, You can also learn more about resolution changers on the official Android Developer website. &lt;a href="https://developer.android.com/guide/practices/screens_support?hl=id">Learn more&lt;/a></string>
+    <string name="string_width">Width (dpi)</string>
+    <string name="string_height">Height (dpi)</string>
+    <string name="string_density">Density</string>
+    <string name="string_save_changes">Save Changes</string>
+    <string name="string_reset">Reset to default</string>
+    <string name="string_settings">Settings</string>
+    <string name="string_subtitle_settings">Configuration, Settings, and more.</string>
+    <string name="string_template_screen">Screen Resolution Template</string>
+    <string name="string_subtitle_template">Attention: Be careful, because not all templates are tested and work on each device.</string>
+    <string name="string_succes_change">Succes change Resolution!</string>
+    <string name="string_copy_log">Copy Error</string>
+    <string name="string_copy_message">Error log Copied!</string>
+    <string name="string_cannot_reset">Cannot reset to default screen. Because:</string>
+    <string name="string_cannot_set_reso">Cannot set resolution, Because:</string>
+    <string name="string_cannot_get_default">Cannot get default Resolution devices, Because:</string>
+    <string name="string_dialog_warning">The resolution you\'ve chosen is significantly different from your device\'s default.\n\nThis might cause system instability or UI issues.\n\nCurrent Default: %1$sx%2$s\nNew Resolution: %3$sx%4$s @ %5$sdpi\n\nAre you sure you want to proceed?</string>
+    <string name="string_template_title">Select template Resolution</string>
+    <string name="action_select">Select</string>
+
+    <!-- SETTINGS ACTIVITY -->
+    <string name="string_theme">UI Theme</string>
+    <string name="string_subtitle_theme">Set Application theme.</string>
+    <string name="string_detector_danger">Danger Detector</string>
+    <string name="string_subtitle_detector">The application will notify and detect dangerous resolutions.</string>
+    <string name="info_string_appearance">Appearance</string>
+    <string name="info_string_configuration">Configuration</string>
+    <string name="info_string_information">Information</string>
+    <string name="action_string_ok">OK</string>
+    <string name="action_string_cancel">Cancel</string>
+    <string name="string_src_github">Source Code</string>
+    <string name="string_subtitle_src">See source code on GitHub</string>
+    <string name="string_bug">Bug or Issues</string>
+    <string name="string_subtitle_bug">If this App has any issues, Please report and open an Issue on GitHub</string>
+    <string name="string_contrib">Contributor</string>
+    <string name="string_subtitle_contrib">People who contributed to this App project</string>
+    <string name="string_license">Open Source License</string>
+    <string name="string_subtitle_license">This application is open source licensed.</string>
+    <string name="title_dialog_theme">Set Theme</string>
+    <string name="title_item_set_follow_system">Follow System</string>
+    <string name="title_item_set_dark_theme">Dark Theme</string>
+    <string name="title_item_set_light_theme">Light Theme</string>    
 </resources>

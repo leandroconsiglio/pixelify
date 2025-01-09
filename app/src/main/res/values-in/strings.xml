@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pixelify</string>
+    <!-- DIALOG -->
+    <string name="title_warning_dialog">Peringatan!</string>
+    <string name="subtitle_warningfirst_dialog">Aplikasi ini dapat mengubah resolusi perangkat, GUNAKAN DENGAN HATI-HATI DAN RISIKO DITANGGUNG SENDIRI!!!</string>
+    <string name="action_understand">Mengerti</string>
+    <string name="action_reject">Tolak</string>
+
+    <!-- ACTIVITY GET STARTUP -->
+    <string name="startup_page_title">Memulai</string>
+    <string name="startup_page_subtitle">Mari mulai dan aktifkan layanan Pixelify dengan memilih metode di bawah ini.</string>
+    <string name="shizuku_title">Mulai dengan Shizuku</string>
+    <string name="shizuku_subtitle">Mulai dengan Shizuku, Klik di sini untuk mengaktifkan.</string>
+    <string name="adb_title">ADB Shell</string>
+    <string name="adb_subtitle">Mulai dengan ADB Shell, Klik di sini untuk mendapatkan perintah.</string>
+    <string name="root_title">Pengguna ROOT</string>
+    <string name="root_subtitle">Untuk pengguna Root, Cukup klik di sini untuk mulai dan berikan Izin.</string>
+    <string name="action_continue">Lanjutkan</string>
+    <string name="action_docs_shizuku">&lt;a href="https://shizuku.rikka.app/guide/setup/">Klik di sini&lt;/a> untuk dokumentasi pengaturan lebih lanjut &lt;a href="https://shizuku.rikka.app/">Shizuku.&lt;/a></string>
+    <string name="no_shizuku_found">Shizuku tidak ditemukan, Apakah Anda sudah menginstal Shizuku?</string>
+    <string name="failed_requestperm_shizuku">gagal mendapatkan izin dari Shizuku</string>
+    <string name="success_root_permission">Izin root berhasil diberikan</string>
+    <string name="failed_root_permission">Gagal mendapatkan izin root</string>
+    <string name="string_devices_notroot">Perangkat Anda tidak di-Root.</string>
+    <string name="string_adb_docs">Untuk mengaktifkan Pixelify melalui ADB Shell, Salin perintah dengan mengetuk tombol di bawah.\n&lt;a href="https://developer.android.com/tools/adb?hl=id#:~:text=Android%20Debug%20Bridge%20(%20adb%20)%20is,of%20commands%20on%20a%20device.">Pelajari lebih lanjut&lt;/a></string>
+    <string name="string_adb_btn">Salin Perintah</string>
+
+    <!-- ACTIVITY MAIN -->
+    <string name="greeting_main">Selamat datang di Pixelify!</string>
+    <string name="docs_greeting_main">Mari ubah resolusi sistem sesuai keinginan Anda, Anda juga dapat mempelajari lebih lanjut tentang pengubah resolusi di situs web resmi Android Developer. &lt;a href="https://developer.android.com/guide/practices/screens_support?hl=id">Pelajari lebih lanjut&lt;/a></string>
+    <string name="string_width">Lebar (dpi)</string>
+    <string name="string_height">Tinggi (dpi)</string>
+    <string name="string_density">Densitas</string>
+    <string name="string_save_changes">Simpan Perubahan</string>
+    <string name="string_reset">Kembalikan ke default</string>
+    <string name="string_settings">Pengaturan</string>
+    <string name="string_subtitle_settings">Konfigurasi, Pengaturan, dan lainnya.</string>
+    <string name="string_template_screen">Template Resolusi Layar</string>
+    <string name="string_subtitle_template">Perhatian: Berhati-hatilah, karena tidak semua template diuji dan berfungsi pada setiap perangkat.</string>
+    <string name="string_succes_change">Berhasil mengubah Resolusi!</string>
+    <string name="string_copy_log">Salin Error</string>
+    <string name="string_copy_message">Log error Disalin!</string>
+    <string name="string_cannot_reset">Tidak dapat mengembalikan ke layar default. Karena:</string>
+    <string name="string_cannot_set_reso">Tidak dapat mengatur resolusi, Karena:</string>
+    <string name="string_cannot_get_default">Tidak dapat mendapatkan Resolusi default perangkat, Karena:</string>
+    <string name="string_dialog_warning">Resolusi yang Anda pilih sangat berbeda dari default perangkat Anda.\n\nIni mungkin menyebabkan ketidakstabilan sistem atau masalah UI.\n\nDefault Saat Ini: %1$sx%2$s\nResolusi Baru: %3$sx%4$s @ %5$sdpi\n\nApakah Anda yakin ingin melanjutkan?</string>
+    <string name="string_template_title">Pilih template Resolusi</string>
+    <string name="action_select">Pilih</string>
+
+    <!-- SETTINGS ACTIVITY -->
+    <string name="string_theme">Tema UI</string>
+    <string name="string_subtitle_theme">Atur tema Aplikasi.</string>
+    <string name="string_detector_danger">Detektor Bahaya</string>
+    <string name="string_subtitle_detector">Aplikasi akan memberi tahu dan mendeteksi resolusi yang berbahaya.</string>
+    <string name="info_string_appearance">Tampilan</string>
+    <string name="info_string_configuration">Konfigurasi</string>
+    <string name="info_string_information">Informasi</string>
+    <string name="action_string_ok">OK</string>
+    <string name="action_string_cancel">Batal</string>
+    <string name="string_src_github">Kode Sumber</string>
+    <string name="string_subtitle_src">Lihat kode sumber di GitHub</string>
+    <string name="string_bug">Bug atau Masalah</string>
+    <string name="string_subtitle_bug">Jika Aplikasi ini memiliki masalah, Silakan laporkan dan buka Issue di GitHub</string>
+    <string name="string_contrib">Kontributor</string>
+    <string name="string_subtitle_contrib">Orang-orang yang berkontribusi pada proyek Aplikasi ini</string>
+    <string name="string_license">Lisensi Open Source</string>
+    <string name="string_subtitle_license">Aplikasi ini berlisensi open source.</string>
+    <string name="title_dialog_theme">Atur Tema</string>
+    <string name="title_item_set_follow_system">Ikuti Sistem</string>
+    <string name="title_item_set_dark_theme">Tema Gelap</string>
+    <string name="title_item_set_light_theme">Tema Terang</string>    
+</resources>

@@ -1,16 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Hello user!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/coordinator">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+        android:id="@+id/appbar">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="?attr/android:colorBackground"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Pixelify"
+            android:elevation="0dp"
+            app:titleCentered="true"
+            app:subtitleCentered="true"
+            android:id="@+id/toolbar"
+            app:subtitle="V.1.0.1-pro" />
+        <View
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:background="?attr/colorSurfaceVariant" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_weight="1"
+        android:id="@+id/nested_scroll_view">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/greeting_main" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/txtDocsPixelify"
+                android:text="@string/docs_greeting_main" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    app:endIconMode="clear_text"
+                    android:gravity="center"
+                    app:counterEnabled="true"
+                    android:hint="@string/string_height"
+                    android:layout_weight="1"
+                    app:counterMaxLength="4">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="number"
+                        android:id="@+id/heightInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    app:endIconMode="clear_text"
+                    android:gravity="center"
+                    app:counterEnabled="true"
+                    android:hint="@string/string_width"
+                    android:layout_weight="1"
+                    app:counterMaxLength="4">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="number"
+                        android:id="@+id/widthInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:endIconMode="clear_text"
+                    android:gravity="center"
+                    app:counterEnabled="true"
+                    android:hint="@string/string_density"
+                    android:layout_weight="1"
+                    app:counterMaxLength="4">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="number"
+                        android:id="@+id/dpiInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="2dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="?attr/colorSurfaceVariant" />
+            <iiec.ditzdev.pixelify.components.SettingsLayout
+                android:id="@+id/btnTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:title="@string/string_template_screen"
+                app:subtitle="@string/string_subtitle_template"
+                app:icon="@drawable/icon_screen" />
+            <iiec.ditzdev.pixelify.components.SettingsLayout
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:title="@string/string_settings"
+                app:subtitle="@string/string_subtitle_settings"
+                app:icon="@drawable/icon_settings" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_top"
+        android:padding="8dp"
+        android:layout_gravity="bottom">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/btnReset"
+            android:text="@string/string_reset" />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="?attr/android:colorBackground"
+            android:id="@+id/btnSave"
+            android:text="@string/string_save_changes" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

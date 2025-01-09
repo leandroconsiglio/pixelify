@@ -1,0 +1,69 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="18dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/title_dialog_theme"
+            android:textSize="25sp"
+            android:textAppearance="?attr/textAppearanceHeadline6" />
+    </LinearLayout>
+    
+    <View
+        android:layout_height="2dp" 
+        android:layout_width="match_parent"
+        android:background="?attr/colorSecondary" />
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <iiec.ditzdev.pixelify.components.SettingsRadioCheck
+                android:id="@+id/set_folow_system"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:title="@string/title_item_set_follow_system" />
+
+            <iiec.ditzdev.pixelify.components.SettingsRadioCheck
+                android:id="@+id/set_theme_dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:title="@string/title_item_set_dark_theme" />
+
+            <iiec.ditzdev.pixelify.components.SettingsRadioCheck
+                android:id="@+id/set_theme_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:title="@string/title_item_set_light_theme" />
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:layout_height="2dp" 
+        android:layout_width="match_parent"
+        android:background="?attr/colorSecondary" />
+</LinearLayout>
