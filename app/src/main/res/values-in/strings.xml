@@ -48,7 +48,8 @@
     <string name="string_template_title">Pilih template Resolusi</string>
     <string name="action_select">Pilih</string>
     <string name="question_reset">Apakah Anda yakin ingin me-reset resolusi layar yang sekarang? Tindakan ini tidak dapat di urungkan</string>
-
+    <string name="shizuk_dialog_warning">Layanan Shizuku tidak aktif. Harap aktifkan layanan Shizuku terlebih dahulu untuk menggunakan aplikasi ini.</string>
+    
     <!-- SETTINGS ACTIVITY -->
     <string name="string_theme">Tema UI</string>
     <string name="string_subtitle_theme">Atur tema Aplikasi.</string>

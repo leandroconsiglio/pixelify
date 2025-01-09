@@ -47,8 +47,8 @@
     <string name="string_dialog_warning">The resolution you\'ve chosen is significantly different from your device\'s default.\n\nThis might cause system instability or UI issues.\n\nCurrent Default: %1$sx%2$s\nNew Resolution: %3$sx%4$s @ %5$sdpi\n\nAre you sure you want to proceed?</string>
     <string name="string_template_title">Select template Resolution</string>
     <string name="action_select">Select</string>
-    <string name="question_reset">Apakah Anda yakin ingin me-reset resolusi layar yang sekarang? Tindakan ini tidak dapat di urungkan</string>
-
+    <string name="question_reset">Are you sure you want to reset the current screen resolution? This action cannot be undone.</string>
+    <string name="shizuk_dialog_warning">Shizuku service is not active. Please activate Shizuku service first to use this application.</string>
     <!-- SETTINGS ACTIVITY -->
     <string name="string_theme">UI Theme</string>
     <string name="string_subtitle_theme">Set Application theme.</string>

@@ -21,6 +21,7 @@ import iiec.ditzdev.pixelify.utils.WM;
 import java.util.ArrayList;
 import java.util.List;
 import iiec.ditzdev.pixelify.models.ResolutionTemplate;
+import rikka.shizuku.Shizuku;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences prefs;
     private static final String PREFS_USER = "userPrefs";
     private static final String PREFS_DANGEROUS = "prefs_dangerous";
+    private static final int SHIZUKU_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 v -> {
                     startActivity(new Intent(this, SettingsActivity.class));
                 });
+        if (!checkShizukuService()) {
+            showShizukuWarningDialog();
+            return;
+        }
         try {
             wm = new WM(getContentResolver());
             utils = new NodeRESOUtils(wm);
@@ -200,6 +206,36 @@ public class MainActivity extends AppCompatActivity {
         templates.add(new ResolutionTemplate("iPad (2021)", 1620, 2160, 264, 2.0f, "10.2\""));
         templates.add(new ResolutionTemplate("iPhone 13 Pro max (2021)", 1284, 2778, 340, 3.0f, "6.68\""));
         return templates;
+    }
+    
+    private boolean checkShizukuService() {
+        try {
+            return Shizuku.pingBinder();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    private void showShizukuWarningDialog() {
+        new BottomSheetDialogBuilder(this)
+                .setIcon(getDrawable(R.drawable.icon_warning))
+                .setMessage(getString(R.string.shizuk_dialog_warning))
+                .setButtonPositive(
+                        getString(R.string.action_string_ok),
+                        v -> {
+                            v.dismiss();
+                            finish();
+                        })
+                .setCancelable(false)
+                .show();
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!checkShizukuService()) {
+            showShizukuWarningDialog();
+            return;
+        }
     }
 
     @Override
