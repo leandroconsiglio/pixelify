@@ -99,8 +99,7 @@ public class MainActivity extends AppCompatActivity {
     private void resetToDefault() {
         new BottomSheetDialogBuilder(this)
                 .setIcon(getDrawable(R.drawable.icon_warning))
-                .setMessage(
-                        "Are you sure to reset current resolution to default? This action cannot be undone.")
+                .setMessage(getString(R.string.question_reset))
                 .setButtonPositive(
                         getString(R.string.action_continue),
                         v -> {

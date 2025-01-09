@@ -47,6 +47,7 @@
     <string name="string_dialog_warning">Resolusi yang Anda pilih sangat berbeda dari default perangkat Anda.\n\nIni mungkin menyebabkan ketidakstabilan sistem atau masalah UI.\n\nDefault Saat Ini: %1$sx%2$s\nResolusi Baru: %3$sx%4$s @ %5$sdpi\n\nApakah Anda yakin ingin melanjutkan?</string>
     <string name="string_template_title">Pilih template Resolusi</string>
     <string name="action_select">Pilih</string>
+    <string name="question_reset">Apakah Anda yakin ingin me-reset resolusi layar yang sekarang? Tindakan ini tidak dapat di urungkan</string>
 
     <!-- SETTINGS ACTIVITY -->
     <string name="string_theme">Tema UI</string>
