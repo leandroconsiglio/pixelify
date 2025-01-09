@@ -30,4 +30,4 @@ To download this application, please go to the page [Release](https://github.com
 Pixelify is a resolution changing application that aims to be used by many people who need it, But sometimes, most people do not understand or are more comfortable with their own country's language, you can contribute languages, or resolution templates, by means of Pull Request.
 
 ## License
-This application is licensed under the *MIT License*. To view the License, [Click here](LICENSE)
+This application is licensed under the *Apache 2.0 License*. To view the License, [Click here](LICENSE)
