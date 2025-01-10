@@ -1,0 +1,9 @@
+Pixelify is a safe mobile screen resolution changer app for rooted and non-rooted devices.
+
+Features:
+* Dangerous Detector
+* Root & Non Root Devices Support
+* Custom Resolution
+* Template Resolution 
+
+You can also contribute your language through the Official Pixelify Repository: https://github.com/DitzDev/pixelify
