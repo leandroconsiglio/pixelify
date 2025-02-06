@@ -2,6 +2,9 @@
 <img alt="Pixelify icon" src="git_assets/pixelify_icon.png">
 </p>
 
+> [!WARNING]
+> This project is deprecated and not maintained anymore, Join [WhatsApp Channels](https://whatsapp.com/channel/0029VaxCdVuFsn0eDKeiIm2c) for more information.
+
 [![Pixelify Start](https://img.shields.io/github/stars/DitzDev/pixelify?style=social)]([[https://github.com/DitzDev/pixelify])
 [![Pixelify Forks](https://img.shields.io/github/forks/DitzDev/pixelify?style=social)](https://github.com/DitzDev/pixelify)
 
