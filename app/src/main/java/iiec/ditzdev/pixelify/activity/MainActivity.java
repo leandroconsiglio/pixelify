@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 v -> {
                     startActivity(new Intent(this, SettingsActivity.class));
                 });
-        if (!checkShizukuService()) {
-            showShizukuWarningDialog();
-            return;
-        }
+        //if (!checkShizukuService()) {
+        //    showShizukuWarningDialog();
+        //    return;
+        //}
         try {
             wm = new WM(getContentResolver());
             utils = new NodeRESOUtils(wm);
