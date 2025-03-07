@@ -232,10 +232,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        if (!checkShizukuService()) {
-            showShizukuWarningDialog();
-            return;
-        }
+        //if (!checkShizukuService()) {
+        //    showShizukuWarningDialog();
+        //    return;
+        //}
     }
 
     @Override
